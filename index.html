@@ -18,15 +18,15 @@
     .nav-links a { text-decoration:none; color:#333; font-weight:500; transition:0.3s; }
     .nav-links a:hover { color:#4f46e5; }
     .hero { padding:120px 0 80px; text-align:center; color:#fff; }
-    .hero h1 { font-size:3rem; font-weight:700; margin-bottom:1rem;
-               text-shadow:2px 2px 4px rgba(0,0,0,0.3); }
+    .hero h1 { font-size:3rem; font-weight:700; margin-bottom:1rem; text-shadow:2px 2px 4px rgba(0,0,0,0.3); }
     .hero p { font-size:1.2rem; margin-bottom:2rem; }
     .cta-button { background:#10b981; color:#fff; padding:15px 30px; border-radius:50px;
                   text-decoration:none; font-weight:600; box-shadow:0 4px 15px rgba(16,185,129,0.4); }
     .cta-button:hover { background:#059669; }
     .main-content { background:#fff; margin-top:-50px; border-radius:20px 20px 0 0; padding:60px 0; }
-    .main-content h2 { text-align:center; font-size:2rem; font-weight:700; margin-bottom:20px; }
-    .main-content p { text-align:center; font-size:1.1rem; color:#555; }
+    .modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .module-card { background:#f9fafb; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    .module-card h3 { color:#4f46e5; }
     .footer { background:#1f2937; color:#fff; padding:40px 0; text-align:center; margin-top:40px; }
   </style>
 </head>
@@ -34,11 +34,10 @@
   <!-- Header -->
   <header class="header">
     <nav class="nav container">
-      <div class="logo">
-        <i class="fas fa-heartbeat"></i> DSMES Program
-      </div>
+      <div class="logo"><i class="fas fa-heartbeat"></i> DSMES Program</div>
       <ul class="nav-links">
         <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="#modules">Modüller</a></li>
         <li><a href="odevler.html">Ödevler</a></li>
         <li><a href="nurse_panel.html">Hemşire Paneli</a></li>
         <li><a href="raporlar.html">Raporlar</a></li>
@@ -56,11 +55,109 @@
     </div>
   </section>
 
-  <main class="main-content">
+  <!-- Modüller Bölümü -->
+  <main class="main-content" id="modules">
     <div class="container">
-      <h2>Hoş geldiniz!</h2>
-      <p>Bu program, diyabet öz-yönetimi için 12 modüllük eğitim içerir.
-         Yukarıdaki menüden diğer sayfalara da ulaşabilirsiniz.</p>
+      <h2 style="text-align:center;">📚 Eğitim Modülleri</h2>
+      <div class="modules">
+
+        <div class="module-card">
+          <h3>Modül 1: Diyabeti Anlamak</h3>
+          <p>📚 DSMES'e giriş, Tip 1 & Tip 2 tanımı, komplikasyonlar.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 2: Sağlıklı Beslenme</h3>
+          <p>📚 ADCES beslenme rehberi, porsiyon kontrolü, karbonhidrat sayımı.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 3: Glisemik İndeks ve Öğün Planlama</h3>
+          <p>📚 Glisemik indeks kavramı, öğün planı, pratik örnekler.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 4: Fiziksel Aktivite</h3>
+          <p>📚 Egzersizin önemi, güvenlik önerileri, ADA kılavuzları.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 5: İlaç Yönetimi</h3>
+          <p>📚 Oral antidiyabetikler, insülin, ilaç uyumu.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 6: Kan Şekeri Takibi</h3>
+          <p>📚 SMBG, CGM, HbA1c hedefleri, kendini izleme.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 7: Problem Çözme</h3>
+          <p>📚 Hipoglisemi, hiperglisemi, hasta senaryoları.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 8: Risk Azaltma</h3>
+          <p>📚 Komplikasyonların önlenmesi, ayak bakımı, aşılar.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 9: Psikososyal Destek</h3>
+          <p>📚 Stres yönetimi, sağlıklı baş etme, sosyal destek.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 10: İletişim</h3>
+          <p>📚 Sağlık ekibi ile etkin iletişim, takip randevuları.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 11: Teknoloji Kullanımı</h3>
+          <p>📚 Mobil sağlık uygulamaları, CGM, insülin pompası.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+        <div class="module-card">
+          <h3>Modül 12: Sürdürülebilirlik</h3>
+          <p>📚 Davranışların kalıcı hale getirilmesi, yaşam boyu takip.</p>
+          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
+          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
+          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+        </div>
+    
+      </div>
     </div>
   </main>
 
