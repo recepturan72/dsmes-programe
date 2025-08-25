@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raporlar | DSMES Program</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-tabs {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .nav-tabs ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-tabs a {
+            text-decoration: none;
+            color: #6b7280;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-tabs a.active,
+        .nav-tabs a:hover {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .report-controls {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .date-filters {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .date-filters input,
+        .date-filters select {
+            padding: 0.5rem;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary { background: #4f46e5; color: white; }
+        .btn-success { background: #10b981; color: white; }
+        .btn-info { background: #3b82f6; color: white; }
+        .btn-warning { background: #f59e0b; color: white; }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .stat-change {
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .stat-increase { color: #10b981; }
+        .stat-decrease { color: #ef4444; }
+
+        .charts-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .chart-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+
+        .detailed-reports {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .report-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .report-table th,
+        .report-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .report-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .progress-bar {
+            background: #e5e7eb;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+
+        .progress-excellent { background: #10b981; }
+        .progress-good { background: #3b82f6; }
+        .progress-average { background: #f59e0b; }
+        .progress-poor { background: #ef4444; }
+
+        .module-performance {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .module-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .module-number {
+            font-weight: 600;
+            color: #4f46e5;
+            margin-bottom: 0.5rem;
+        }
+
+        .completion-rate {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .nav-tabs ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .report-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .date-filters {
+                justify-content: center;
+            }
+
+            .export-buttons {
+                justify-content: center;
+            }
+
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-chart-bar"></i> DSMES Program Raporları</h1>
+            <p>Detaylı analiz ve performans raporları</p>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <div class="container">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                <li><a href="nurse_panel.html"><i class="fas fa-users"></i> Katılımcılar</a></li>
+                <li><a href="raporlar.html" class="active"><i class="fas fa-chart-bar"></i> Raporlar</a></li>
+                <li><a href="odevler.html"><i class="fas fa-tasks"></i> Ödevler</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Rapor Kontrolleri -->
+        <section class="report-controls">
+            <div class="date-filters">
+                <label>Tarih Aralığı:</label>
+                <input type="date" id="startDate" value="2025-01-01">
+                <span>-</span>
+                <input type="date" id="endDate" value="2025-08-25">
+                <select id="reportType">
+                    <option value="all">Tüm Katılımcılar</option>
+                    <option value="active">Aktif Katılımcılar</option>
+                    <option value="completed">Tamamlayanlar</option>
+                </select>
+                <button class="btn btn-primary" onclick="updateReports()">
+                    <i class="fas fa-sync"></i> Güncelle
+                </button>
+            </div>
+
+            <div class="export-buttons">
+                <button class="btn btn-success" onclick="exportToExcel()">
+                    <i class="fas fa-file-excel"></i> Excel
+                </button>
+                <button class="btn btn-info" onclick="exportToPDF()">
+                    <i class="fas fa-file-pdf"></i> PDF
+                </button>
+                <button class="btn btn-warning" onclick="printReport()">
+                    <i class="fas fa-print"></i> Yazdır
+                </button>
+            </div>
+        </section>
+
+        <!-- Genel İstatistikler -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="color: #10b981;">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number">24</div>
+                <div class="stat-label">Toplam Katılımcı</div>
+                <div class="stat-change stat-increase">
+                    <i class="fas fa-arrow-up"></i> +3 bu ay
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="color: #3b82f6;">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="stat-number">8</div>
+                <div class="stat-label">Program Tamamlayan</div>
+                <div class="stat-change stat-increase">
+                    <i class="fas fa-arrow-up"></i> +2 bu ay
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="color: #f59e0b;">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <div class="stat-number">73%</div>
+                <div class="stat-label">Ortalama Tamamlanma</div>
+                <div class="stat-change stat-increase">
+                    <i class="fas fa-arrow-up"></i> +5% bu ay
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="color: #8b5cf6;">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-number">9.2</div>
+                <div class="stat-label">Ortalama Hafta</div>
+                <div class="stat-change stat-decrease">
+                    <i class="fas fa-arrow-down"></i> -0.3 bu ay
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="color: #ef4444;">
+                    <i class="fas fa-user-times"></i>
+                </div>
+                <div class="stat-number">3</div>
+                <div class="stat-label">Bırakma Oranı</div>
+                <div class="stat-change stat-decrease">
+                    <i class="fas fa-arrow-down"></i> -1 bu ay
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="color: #06b6d4;">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-number">4.6</div>
+                <div class="stat-label">Memnuniyet Puanı</div>
+                <div class="stat-change stat-increase">
+                    <i class="fas fa-arrow-up"></i> +0.2 bu ay
+                </div>
+            </div>
+        </section>
+
+        <!-- Grafikler -->
+        <section class="charts-section">
+            <div class="chart-card">
+                <h3 class="chart-title">Modül Tamamlanma Oranları</h3>
+                <div class="chart-container">
+                    <canvas id="moduleCompletionChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3 class="chart-title">Aylık İlerleme Trendi</h3>
+                <div class="chart-container">
+                    <canvas id="progressTrendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3 class="chart-title">Katılımcı Durum Dağılımı</h3>
+                <div class="chart-container">
+                    <canvas id="statusDistributionChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3 class="chart-title">Yaş Grubu Analizi</h3>
+                <div class="chart-container">
+                    <canvas id="ageGroupChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modül Performans Analizi -->
+        <section class="detailed-reports">
+            <div class="section-header">
+                <h2 class="section-title">Modül Performans Analizi</h2>
+            </div>
+            <div style="padding: 1.5rem;">
+                <div class="module-performance">
+                    <div class="module-item">
+                        <div class="module-number">Modül 1</div>
+                        <div class="completion-rate" style="color: #10b981;">95%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-excellent" style="width: 95%;"></div>
+                        </div>
+                        <small>Hedef Belirleme</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 2</div>
+                        <div class="completion-rate" style="color: #10b981;">92%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-excellent" style="width: 92%;"></div>
+                        </div>
+                        <small>Diyabet Temelleri</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 3</div>
+                        <div class="completion-rate" style="color: #3b82f6;">87%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-good" style="width: 87%;"></div>
+                        </div>
+                        <small>İlaç Yönetimi</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 4</div>
+                        <div class="completion-rate" style="color: #3b82f6;">83%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-good" style="width: 83%;"></div>
+                        </div>
+                        <small>Kan Şekeri İzleme</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 5</div>
+                        <div class="completion-rate" style="color: #f59e0b;">78%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-average" style="width: 78%;"></div>
+                        </div>
+                        <small>Beslenme</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 6</div>
+                        <div class="completion-rate" style="color: #f59e0b;">75%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-average" style="width: 75%;"></div>
+                        </div>
+                        <small>Fiziksel Aktivite</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 7</div>
+                        <div class="completion-rate" style="color: #f59e0b;">71%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-average" style="width: 71%;"></div>
+                        </div>
+                        <small>Acil Durum Yönetimi</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 8</div>
+                        <div class="completion-rate" style="color: #ef4444;">68%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-poor" style="width: 68%;"></div>
+                        </div>
+                        <small>Stres Yönetimi</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 9</div>
+                        <div class="completion-rate" style="color: #ef4444;">65%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-poor" style="width: 65%;"></div>
+                        </div>
+                        <small>Motivasyon</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 10</div>
+                        <div class="completion-rate" style="color: #ef4444;">62%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-poor" style="width: 62%;"></div>
+                        </div>
+                        <small>Sosyal Destek</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 11</div>
+                        <div class="completion-rate" style="color: #ef4444;">58%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-poor" style="width: 58%;"></div>
+                        </div>
+                        <small>Yaşam Geçişleri</small>
+                    </div>
+
+                    <div class="module-item">
+                        <div class="module-number">Modül 12</div>
+                        <div class="completion-rate" style="color: #ef4444;">45%</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill progress-poor" style="width: 45%;"></div>
+                        </div>
+                        <small>Sürdürülebilirlik</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detaylı Katılımcı Raporu -->
+        <section class="detailed-reports">
+            <div class="section-header">
+                <h2 class="section-title">Detaylı Katılımcı Raporu</h2>
+            </div>
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th>Katılımcı</th>
+                        <th>Başlangıç</th>
+                        <th>Genel İlerleme</th>
+                        <th>Tamamlanan Modül</th>
+                        <th>Son Aktivite</th>
+                        <th>Durum</th>
+                        <th>Performans</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ayşe Yılmaz</strong><br><small>25 yaş</small></td>
+                        <td>15.01.2025</td>
+                        <td>
+                            <div class="progress-indicator">
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-excellent" style="width: 85%;"></div>
+                                </div>
+                                <span>85%</span>
+                            </div>
+                        </td>
+                        <td>10/12</td>
+                        <td>2 gün önce</td>
+                        <td><span class="status-badge status-active">Aktif</span></td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mehmet Kaya</strong><br><small>32 yaş</small></td>
+                        <td>08.01.2025</td>
+                        <td>
+                            <div class="progress-indicator">
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-good" style="width: 67%;"></div>
+                                </div>
+                                <span>67%</span>
+                            </div>
+                        </td>
+                        <td>8/12</td>
+                        <td>1 hafta önce</td>
+                        <td><span class="status-badge status-active">Aktif</span></td>
+                        <td>⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fatma Demir</strong><br><small>28 yaş</small></td>
+                        <td>22.12.2024</td>
+                        <td>
+                            <div class="progress-indicator">
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-excellent" style="width: 100%;"></div>
+                                </div>
+                                <span>100%</span>
+                            </div>
+                        </td>
+                        <td>12/12</td>
+                        <td>3 gün önce</td>
+                        <td><span class="status-badge status-completed">Tamamlandı</span></td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+        // Chart.js ile grafikleri oluştur
+        document.addEventListener('DOMContentLoaded', function() {
+            createModuleCompletionChart();
+            createProgressTrendChart();
+            createStatusDistributionChart();
+            createAgeGroupChart();
+        });
+
+        function createModuleCompletionChart() {
+            const ctx = document.getElementById('moduleCompletionChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['M1', 'M2', 'M3', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9', 'M10', 'M11', 'M12'],
+                    datasets: [{
+                        label: 'Tamamlanma Oranı (%)',
+                        data: [95, 92, 87, 83, 78, 75, 71, 68, 65, 62, 58, 45],
+                        backgroundColor: [
+                            '#10b981', '#10b981', '#3b82f6', '#3b82f6', '#f59e0b', '#f59e0b',
+                            '#f59e0b', '#ef4444', '#ef4444', '#ef4444', '#ef4444', '#ef4444'
+                        ],
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        function createProgressTrendChart() {
+            const ctx = document.getElementById('progressTrendChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos'],
+                    datasets: [{
+                        label: 'Ortalama İlerleme (%)',
+                        data: [45, 52, 58, 63, 67, 70, 72, 73],
+                        borderColor: '#4f46e5',
+                        backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        function createStatusDistributionChart() {
+            const ctx = document.getElementById('statusDistributionChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Aktif', 'Tamamlandı', 'Pasif', 'Bıraktı'],
+                    datasets: [{
+                        data: [15, 8, 3, 2],
+                        backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#ef4444']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+
+        function createAgeGroupChart() {
+            const ctx = document.getElementById('ageGroupChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['18-25', '26-30', '31-35', '36-40', '41-45'],
+                    datasets: [{
+                        label: 'Katılımcı Sayısı',
+                        data: [6, 8, 5, 3, 2],
+                        backgroundColor: '#8b5cf6',
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Export fonksiyonları
+        function exportToExcel() {
+            alert('Excel raporu indiriliyor...');
+        }
+
+        function exportToPDF() {
+            alert('PDF raporu oluşturuluyor...');
+        }
+
+        function printReport() {
+            window.print();
+        }
+
+        function updateReports() {
+            alert('Raporlar güncelleniyor...');
+        }
+    </script>
+</body>
+</html>
