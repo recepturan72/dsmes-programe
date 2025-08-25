@@ -24,14 +24,15 @@
                   text-decoration:none; font-weight:600; box-shadow:0 4px 15px rgba(16,185,129,0.4); }
     .cta-button:hover { background:#059669; }
     .main-content { background:#fff; margin-top:-50px; border-radius:20px 20px 0 0; padding:60px 0; }
-    .modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
     .module-card { background:#f9fafb; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-    .module-card h3 { color:#4f46e5; }
+    .module-card h3 { color:#4f46e5; margin-bottom: 15px; }
+    .module-card ul { margin: 10px 0; padding-left: 20px; }
+    .module-card li { margin: 5px 0; }
     .footer { background:#1f2937; color:#fff; padding:40px 0; text-align:center; margin-top:40px; }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <nav class="nav container">
       <div class="logo"><i class="fas fa-heartbeat"></i> DSMES Program</div>
@@ -46,7 +47,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="container">
       <h1>Diyabet Öz-Yönetim Eğitim Programı</h1>
@@ -55,113 +55,147 @@
     </div>
   </section>
 
-  <!-- Modüller Bölümü -->
   <main class="main-content" id="modules">
     <div class="container">
-      <h2 style="text-align:center;">📚 Eğitim Modülleri</h2>
+      <h2 style="text-align:center; margin-bottom: 40px;">📚 Eğitim Modülleri</h2>
       <div class="modules">
 
         <div class="module-card">
           <h3>Modül 1: Diyabeti Anlamak</h3>
-          <p>📚 DSMES'e giriş, Tip 1 & Tip 2 tanımı, komplikasyonlar.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Diyabetin tanımı, tipleri ve patofizyolojisini öğrenmek</li><li>Tip 1 ve Tip 2 diyabet farklarını kavramak</li><li>Komplikasyonları ve öz-yönetimin önemini anlamak</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Diyabet; insülin üretilmemesi veya etkisizliği ile ortaya çıkan kronik metabolik hastalıktır. <b>Tip 1 diyabet</b> otoimmün kaynaklı olup genellikle genç yaşta başlar ve mutlak insülin eksikliği vardır. <b>Tip 2 diyabet</b> ise insülin direnci ve beta hücre disfonksiyonunun birleşimi ile gelişir. Yönetilmediğinde hipoglisemi, hiperglisemi, kardiyovasküler hastalık, nefropati, retinopati ve nöropati gibi komplikasyonlar gelişebilir. DSMES programı, bireyin bilgi, beceri ve motivasyonunu artırarak sağlıklı yaşam sürmesini destekler.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>Bir hafta boyunca açlık ve tokluk kan şekeri ölçümü yapın ve kaydedin</li><li>Kendi yaşam tarzınızda diyabeti etkileyebilecek 3 faktörü belirleyin</li><li>Günlük öz-yönetim hedeflerinizi küçük adımlarla yazın</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.diabetes.org/diabetes" target="_blank">https://www.diabetes.org/diabetes</a></li><li><a href="https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors" target="_blank">https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors</a></li></ul>
         </div>
     
         <div class="module-card">
           <h3>Modül 2: Sağlıklı Beslenme</h3>
-          <p>📚 ADCES beslenme rehberi, porsiyon kontrolü, karbonhidrat sayımı.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Diyabette beslenme temel prensiplerini öğrenmek</li><li>Karbonhidrat sayımı yöntemini kavramak</li><li>Porsiyon kontrolü ve öğün planlaması yapmak</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Tıbbi beslenme tedavisi tip 2 diyabetin yönetiminde güçlü bir araçtır. Karbonhidrat sayımı, öğünlerin planlanmasında kritik önemdedir. Yüksek lif, tam tahıl, düşük glisemik indeksli gıdalar tercih edilmelidir. Şekerli içeceklerden kaçınılmalı, sebze tüketimi artırılmalıdır. Öğün zamanlaması ve porsiyon kontrolü kan şekeri regülasyonunda önemlidir.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>3 günlük beslenme günlüğü tutun</li><li>Yediğiniz gıdaların karbonhidrat miktarını hesaplayın</li><li>Bir öğününüzü tabak modeline göre düzenleyin</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.eatright.org" target="_blank">https://www.eatright.org</a></li><li><a href="https://www.diabetes.org/nutrition" target="_blank">https://www.diabetes.org/nutrition</a></li></ul>
         </div>
     
         <div class="module-card">
           <h3>Modül 3: Glisemik İndeks ve Öğün Planlama</h3>
-          <p>📚 Glisemik indeks kavramı, öğün planı, pratik örnekler.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Glisemik indeks kavramını öğrenmek</li><li>Düşük GI gıdaları seçmeyi öğrenmek</li><li>Dengeli öğün planı oluşturmak</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Glisemik indeks, gıdaların kan şekerine etkisini ölçer. Yüksek GI gıdalar hızlı glikoz artışına yol açarken, düşük GI gıdalar daha stabil kan şekeri sağlar. Diyabet kontrolünde düşük GI gıdalar tercih edilmelidir. Öğün planı lif, protein ve düşük GI karbonhidrat dengesiyle yapılmalıdır.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>Bir öğününüzde yüksek GI gıda yerine düşük GI alternatifi seçin</li><li>Haftalık öğün planınızı oluşturun</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://glycemicindex.com" target="_blank">https://glycemicindex.com</a></li></ul>
         </div>
     
         <div class="module-card">
-          <h3>Modül 4: Fiziksel Aktivite</h3>
-          <p>📚 Egzersizin önemi, güvenlik önerileri, ADA kılavuzları.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <h3>Modül 4: Fiziksel Aktivite ve Egzersiz</h3>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Egzersizin diyabetteki önemini anlamak</li><li>Güvenli egzersiz ilkelerini öğrenmek</li><li>Kişisel aktivite planı oluşturmak</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Haftada en az 150 dakika orta yoğunluklu aerobik egzersiz önerilir. Egzersiz insülin duyarlılığını artırır ve HbA1c'yi düşürür. Direnç egzersizleri de haftada 2-3 kez yapılmalıdır. Hipoglisemi riski için egzersiz öncesi, sırası ve sonrası kan şekeri kontrolü önemlidir.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>3 gün 30 dakika yürüyüş planlayın ve kaydedin</li><li>Egzersiz öncesi ve sonrası kan şekerinizi ölçün</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank">https://www.who.int/news-room/fact-sheets/detail/physical-activity</a></li></ul>
         </div>
     
         <div class="module-card">
           <h3>Modül 5: İlaç Yönetimi</h3>
-          <p>📚 Oral antidiyabetikler, insülin, ilaç uyumu.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Oral antidiyabetik ilaçları ve insülin türlerini öğrenmek</li><li>İlaç uyumunun önemini kavramak</li><li>Yan etki yönetimini öğrenmek</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Tip 2 diyabet tedavisinde metformin ilk basamak ilaçtır. Gerekirse diğer oral antidiyabetikler veya insülin eklenir. Doğru doz, doğru zaman ve düzenli kullanım kritiktir. İlaçların yan etkileri bilinmeli ve yönetilmelidir. İnsülin kullanımında enjeksiyon tekniği ve saklama koşulları önemlidir.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>Kullandığınız ilaçları listeleyin ve etkilerini öğrenin</li><li>Her ilaç dozunun zamanını kaydedin</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.diabetes.org/diabetes/medication" target="_blank">https://www.diabetes.org/diabetes/medication</a></li></ul>
         </div>
     
         <div class="module-card">
-          <h3>Modül 6: Kan Şekeri Takibi</h3>
-          <p>📚 SMBG, CGM, HbA1c hedefleri, kendini izleme.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <h3>Modül 6: Kan Şekeri Takibi ve İzleme</h3>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>SMBG ve CGM sistemlerini öğrenmek</li><li>Hedef kan şekeri aralıklarını bilmek</li><li>Kan şekeri verilerini yorumlamak</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Kan şekeri izleme, öz-yönetimin temel taşıdır. Açlık hedefi 80-130 mg/dl, öğün sonrası <180 mg/dl olmalıdır. HbA1c hedefi genellikle <%7'dir. Sürekli glikoz monitörleri (CGM) trend bilgisi sağlar ve hipoglisemi riskini azaltır.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>1 hafta boyunca kan şekeri günlüğü tutun</li><li>Kan şekeri trendlerinizin grafiğini oluşturun</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://professional.diabetes.org/diapro/glucose-monitoring" target="_blank">https://professional.diabetes.org/diapro/glucose-monitoring</a></li></ul>
         </div>
     
         <div class="module-card">
-          <h3>Modül 7: Problem Çözme</h3>
-          <p>📚 Hipoglisemi, hiperglisemi, hasta senaryoları.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <h3>Modül 7: Problem Çözme Becerileri</h3>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Hipoglisemi ve hiperglisemi yönetimini öğrenmek</li><li>Hasta senaryolarıyla problem çözme becerisi geliştirmek</li><li>Acil durum planı oluşturmak</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Hipoglisemi (<70 mg/dl) durumunda 15 g hızlı emilen karbonhidrat alınmalı, 15 dakika sonra tekrar ölçülmelidir. Hiperglisemi (>180 mg/dl) durumunda ek insülin, egzersiz veya hidratasyon gerekebilir. Hasta senaryoları ile problem çözme becerileri geliştirilir.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>Hipoglisemi durumunda yapacağınız adımları yazın</li><li>Acil durum çantanızı hazırlayın</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.diabetes.org/diabetes/hypoglycemia" target="_blank">https://www.diabetes.org/diabetes/hypoglycemia</a></li></ul>
         </div>
     
         <div class="module-card">
-          <h3>Modül 8: Risk Azaltma</h3>
-          <p>📚 Komplikasyonların önlenmesi, ayak bakımı, aşılar.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <h3>Modül 8: Risk Azaltma ve Komplikasyon Önleme</h3>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Diyabet komplikasyonlarından korunma yollarını öğrenmek</li><li>Düzenli tarama programlarının önemini kavramak</li><li>Ayak bakımı ve diğer önleyici tedbirleri uygulamak</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Yıllık göz muayenesi, böbrek fonksiyon testleri ve ayak muayenesi önerilir. Sigara bırakılmalı, kan basıncı ve kolesterol kontrol altında tutulmalıdır. Aşılamalar (influenza, pnömokok, hepatit B) yapılmalıdır. Günlük ayak bakımı ve uygun ayakkabı seçimi önemlidir.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>Kendi ayak muayenenizi yapın ve kaydedin</li><li>Aşı durumunuzu kontrol edin ve eksikleri tamamlayın</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.cdc.gov/diabetes/basics/risk-factors.html" target="_blank">https://www.cdc.gov/diabetes/basics/risk-factors.html</a></li></ul>
         </div>
     
         <div class="module-card">
-          <h3>Modül 9: Psikososyal Destek</h3>
-          <p>📚 Stres yönetimi, sağlıklı baş etme, sosyal destek.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <h3>Modül 9: Psikososyal Destek ve Stres Yönetimi</h3>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Diyabetin psikososyal etkilerini anlamak</li><li>Stres yönetimi tekniklerini öğrenmek</li><li>Sağlıklı baş etme stratejileri geliştirmek</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Diyabet stresi ve depresyon sık görülür. Bilişsel davranışçı terapi, destek grupları ve gevşeme teknikleri etkilidir. Sosyal destek sistemleri önemlidir. Stres kan şekerini olumsuz etkileyebilir, bu nedenle stres yönetimi kritiktir.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>3 farklı stres yönetimi yöntemi deneyin</li><li>Duygularınızı günlük olarak kaydedin</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.apa.org/topics/stress" target="_blank">https://www.apa.org/topics/stress</a></li></ul>
         </div>
     
         <div class="module-card">
-          <h3>Modül 10: İletişim</h3>
-          <p>📚 Sağlık ekibi ile etkin iletişim, takip randevuları.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <h3>Modül 10: Sağlık Ekibi ile İletişim</h3>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Multidisipliner ekip yaklaşımını anlamak</li><li>Etkili iletişim becerilerini geliştirmek</li><li>Düzenli takip önemini kavramak</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Diyabet yönetimi multidisipliner ekip yaklaşımı gerektirir. Doktor, hemşire, diyetisyen, eczacı ve diğer sağlık profesyonelleri ile etkili iletişim güvenli bakım sağlar. Randevular aksatılmamalı, sorular hazırlanmalıdır.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>Bir sonraki doktor/hemşire randevunuzu planlayın</li><li>Sormak istediğiniz soruları listeleyin</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.diabeteseducator.org" target="_blank">https://www.diabeteseducator.org</a></li></ul>
         </div>
     
         <div class="module-card">
           <h3>Modül 11: Teknoloji Kullanımı</h3>
-          <p>📚 Mobil sağlık uygulamaları, CGM, insülin pompası.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Dijital sağlık araçlarını öğrenmek</li><li>Mobil uygulamaları etkili kullanmak</li><li>CGM ve insülin pompası hakkında bilgi sahibi olmak</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Dijital sağlık araçları diyabet yönetimini kolaylaştırır. Glikoz sensörleri, akıllı telefon uygulamaları ve insülin pompaları motivasyonu artırır ve daha iyi kontrol sağlar. Telemedicine hizmetleri erişimi artırır.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>Bir diyabet yönetim uygulaması indirin ve deneyin</li><li>Teknolojik araçların avantaj ve dezavantajlarını listeleyin</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.fda.gov/medical-devices/diabetes-management-devices" target="_blank">https://www.fda.gov/medical-devices/diabetes-management-devices</a></li></ul>
         </div>
     
         <div class="module-card">
-          <h3>Modül 12: Sürdürülebilirlik</h3>
-          <p>📚 Davranışların kalıcı hale getirilmesi, yaşam boyu takip.</p>
-          <p>🎯 <b>Hedefler:</b> Güncel DSMES ve ADCES7 protokolüne göre öz-yönetim becerilerini geliştirmek.</p>
-          <p>📝 <b>Ödev:</b> Katılımcının günlük yaşamına uygulayacağı görevler tanımlanır.</p>
-          <p>🔗 <b>Kaynak:</b> <a href='https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors' target='_blank'>ADCES7</a></p>
+          <h3>Modül 12: Sürdürülebilirlik ve Uzun Dönem Takip</h3>
+          <p>🎯 <b>Öğrenme Hedefleri:</b></p>
+          <ul><li>Davranış değişimini sürdürme stratejilerini öğrenmek</li><li>Uzun dönem motivasyonu korumak</li><li>SMART hedefler belirlemeyi öğrenmek</li></ul>
+          <p>📚 <b>Eğitim İçeriği:</b><br>Uzun dönem öz-yönetim başarısı, sürdürülebilir davranış değişimi ile sağlanır. SMART hedefler (Spesifik, Ölçülebilir, Ulaşılabilir, Gerçekçi, Zamanlı) belirlenmeli. Destek grupları ve tele-sağlık çözümleri motivasyonu destekler.</p>
+          <p>📝 <b>Ödev / Uygulama:</b></p>
+          <ul><li>Kendinize 3 aylık SMART hedefler belirleyin</li><li>Hedeflerinizi takip edecek sistemi kurun</li></ul>
+          <p>🔗 <b>Kaynaklar:</b></p>
+          <ul><li><a href="https://www.diabetes.org/healthy-living" target="_blank">https://www.diabetes.org/healthy-living</a></li></ul>
         </div>
     
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="footer" id="contact">
     <div class="container">
       <p>&copy; 2025 Diyabet Öz-Yönetim Eğitim Programı. Tüm hakları saklıdır.</p>
