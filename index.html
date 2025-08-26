@@ -3,47 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diyabet Yolculuğum - Eğitim Modülleri</title>
+  <title>Diyabet Yolculuğum - Eğitim Programı</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#f9fafb; }
-    header { background:#4f46e5; color:#fff; padding:15px; text-align:center; }
-    h1 { margin:0; }
+    body { font-family: Arial, sans-serif; margin:0; background:#f9fafb; color:#111827;}
+    header { background:#4f46e5; color:#fff; position:fixed; top:0; width:100%; z-index:1000;
+      display:flex; justify-content:space-between; align-items:center; padding:15px 30px; }
+    header h1 { margin:0; font-size:20px; }
+    nav a { color:#fff; margin:0 10px; text-decoration:none; font-weight:bold; }
+    nav a:hover { text-decoration:underline; }
+    .hero { padding:120px 20px 60px; text-align:center; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; }
+    .hero h2 { font-size:32px; margin-bottom:10px; }
+    .hero p { font-size:18px; max-width:700px; margin:0 auto 20px; }
+    .cta { background:#10b981; color:#fff; padding:12px 22px; text-decoration:none; border-radius:6px; font-weight:bold; }
+    .cta:hover { background:#059669; }
     .container { max-width:960px; margin:30px auto; padding:20px; }
-    .accordion-btn { width:100%; background:#4338ca; color:#fff; padding:15px; 
-      border:none; border-radius:8px; text-align:left; font-size:18px; margin-bottom:6px;
+    h2.sec-title { text-align:center; margin:40px 0 20px; color:#111827; }
+    .accordion-btn { width:100%; background:#4338ca; color:#fff; padding:15px;
+      border:none; border-radius:8px; text-align:left; font-size:18px; margin:6px 0;
       cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
     .accordion-btn:hover { background:#3730a3; }
+    .accordion-icon { font-weight:bold; margin-left:12px; }
     .panel { max-height:0; overflow:hidden; background:#fff; border-radius:0 0 8px 8px; margin-bottom:12px;
       padding:0 18px; transition:max-height 0.3s ease, padding 0.2s ease; }
     .panel.open { padding:16px 18px 18px; }
-    .panel h4 { margin:10px 0 6px; color:#4338ca; }
+    .panel h4 { margin:12px 0 6px; color:#4338ca; }
     .panel ul { margin:0 0 10px 22px; }
     .panel li { margin-bottom:6px; }
+    .progress-container{background:#e5e7eb;border-radius:8px;overflow:hidden;margin:20px 0;}
+    .progress-bar{height:20px;background:#10b981;width:0%;text-align:center;color:#fff;font-size:12px;transition:width 0.3s ease;}
+    footer { background:#1f2937; color:#fff; text-align:center; padding:30px 20px; margin-top:40px; }
+    form{max-width:400px;margin:0 auto;text-align:left;}
+    form input,form textarea{width:100%;padding:8px;margin-bottom:12px;border:1px solid #ccc;border-radius:6px;}
+    form button{background:#4f46e5;color:#fff;padding:10px 16px;border:none;border-radius:6px;cursor:pointer;}
+    form button:hover{background:#4338ca;}
   </style>
 </head>
 <body>
   <header>
-    <h1>📘 Diyabet Yolculuğum – Eğitim Modülleri</h1>
+    <h1>Diyabet Yolculuğum</h1>
+    <nav>
+      <a href="#hero">Ana Sayfa</a>
+      <a href="#modules">Modüller</a>
+      <a href="odevler.html">Ödevler</a>
+      <a href="nurse_panel.html">Hemşire Paneli</a>
+      <a href="raporlar.html">Raporlar</a>
+      <a href="#progress">İlerlemen</a>
+      <a href="#contact">İletişim</a>
+    </nav>
   </header>
-  <div class="container">
-<button class="accordion-btn">🩺 Modül 1: Diyabeti Anlamak<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Diyabetin ne olduğunu ve tiplerini öğrenin</li><li>Komplikasyonları tanıyın</li><li>DSMES'in faydasını kavrayın</li></ul><h4>📚 Eğitim İçeriği</h4><p>Diyabet vücudumuzun şekeri nasıl kullandığıyla ilgili bir hastalıktır. Tip 1 diyabette hiç insülin üretilmez, Tip 2 diyabette insülin etkili çalışmaz. Yüksek şeker uzun süre devam ederse göz, böbrek, sinir ve kalbi etkileyebilir. DSMES eğitimi kan şekerimizi kontrol etmeyi ve sağlıklı yaşam sürmeyi destekler.</p><h4>📝 Ödev / Uygulama</h4><ul><li>1 hafta boyunca sabah açlık ve yemek sonrası kan şekeri ölçün.</li><li>Diyabeti etkileyen 3 faktör yazın (uyku, stres, beslenme).</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.diabetes.org/diabetes" target="_blank">https://www.diabetes.org/diabetes</a></li><li><a href="https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors" target="_blank">https://www.diabeteseducator.org/practice/educator-tools/adces7-self-care-behaviors</a></li></ul></div><button class="accordion-btn">🍎 Modül 2: Sağlıklı Beslenme<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Sağlıklı tabak modelini öğrenin</li><li>Doğru porsiyon kontrolü yapın</li><li>Şekerli içeceklerden uzak durun</li></ul><h4>📚 Eğitim İçeriği</h4><p>Sağlıklı beslenme ‘şekeri tamamen kesmek’ değil, doğru denge kurmaktır. Tabağın yarısı sebze, çeyreği protein, çeyreği tam tahıl olmalıdır. Şekerli içecek yerine su için.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Bir öğününüzü tabak modeline göre yeniden düzenleyin.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.diabetes.org/nutrition" target="_blank">https://www.diabetes.org/nutrition</a></li></ul></div><button class="accordion-btn">📊 Modül 3: Glisemik İndeks<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Glisemik indeksi öğrenin</li><li>Yiyeceklerin kan şekerini nasıl etkilediğini bilin</li></ul><h4>📚 Eğitim İçeriği</h4><p>Yüksek GI (beyaz ekmek, pirinç) şekeri hızla yükseltir. Düşük GI (mercimek, bulgur, tam tahıllar) şekeri daha dengeli yükseltir.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Bir öğünde yüksek GI’lı bir yiyeceği düşük GI alternatifi ile değiştirin.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://glycemicindex.com" target="_blank">https://glycemicindex.com</a></li></ul></div><button class="accordion-btn">🏃 Modül 4: Fiziksel Aktivite<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Egzersizin faydasını öğrenin</li><li>Haftalık aktivite planı yapın</li></ul><h4>📚 Eğitim İçeriği</h4><p>Günde 30 dk yürüyüş kan şekerini düşürür, kalbi korur. Haftada 150 dk orta tempolu hareket önerilir.</p><h4>📝 Ödev / Uygulama</h4><ul><li>3 gün üst üste 30 dk yürüyüş yapın, öncesi-sonrası şekerinizi ölçün.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank">https://www.who.int/news-room/fact-sheets/detail/physical-activity</a></li></ul></div><button class="accordion-btn">💊 Modül 5: İlaç Kullanımı<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>İlaçların nasıl çalıştığını bilin</li><li>Düzenli kullanımın önemini kavrayın</li></ul><h4>📚 Eğitim İçeriği</h4><p>Metformin karaciğerin fazla şeker üretmesini engeller. İnsülin kan şekerini doğrudan düşürür. İlaçları düzenli ve doğru saatte almak çok önemlidir.</p><h4>📝 Ödev / Uygulama</h4><ul><li>İlaçlarınızın isim, doz ve saat listesini çıkarın.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.diabetes.org/diabetes/medication" target="_blank">https://www.diabetes.org/diabetes/medication</a></li></ul></div><button class="accordion-btn">🧪 Modül 6: Kan Şekeri Takibi<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Kan şekeri ölçümünü öğrenin</li><li>Hedef aralıkları bilin</li></ul><h4>📚 Eğitim İçeriği</h4><p>Açlık şeker hedefi 80–130 mg/dl, yemek sonrası 180’in altı olmalıdır. Düzenli ölçüm, şekerin nasıl değiştiğini gösterir.</p><h4>📝 Ödev / Uygulama</h4><ul><li>1 hafta sabah açlık ve akşam yemekten 2 saat sonra ölçüm yapın ve yazın.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://professional.diabetes.org/diapro/glucose-monitoring" target="_blank">https://professional.diabetes.org/diapro/glucose-monitoring</a></li></ul></div><button class="accordion-btn">🧯 Modül 7: Şeker Düşmesi ve Yükselmesi<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Hipoglisemi ve hiperglisemiyi tanıyın</li><li>Doğru müdahale edin</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hipoglisemi (<70) bulguları: terleme, titreme, bulanık görme. Çözüm: 1 bardak meyve suyu, 15 dk sonra tekrar ölçüm. Hiperglisemi (>180): çok susama, sık idrara çıkma. Çözüm: su için, yürüyüş yapın, ölçüm yapın.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Kendi hipoglisemi eylem planınızı yazın.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.diabetes.org/diabetes/hypoglycemia" target="_blank">https://www.diabetes.org/diabetes/hypoglycemia</a></li></ul></div><button class="accordion-btn">🛡 Modül 8: Riskleri Azaltmak<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Komplikasyonlardan korunma yollarını öğrenin</li></ul><h4>📚 Eğitim İçeriği</h4><p>Yılda 1 kez göz muayenesi, düzenli böbrek tahlili, ayağınızı her gün kontrol edin. Sigara içmeyin, tansiyon ve kolesterolü dengede tutun.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Ayaklarınızı bugün inceleyin ve gözlemlerinizi yazın.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.cdc.gov/diabetes/basics/risk-factors.html" target="_blank">https://www.cdc.gov/diabetes/basics/risk-factors.html</a></li></ul></div><button class="accordion-btn">🧠 Modül 9: Psikososyal Destek<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Diyabetin ruhsal etkisini tanıyın</li><li>Stresle baş etme yollarını uygulayın</li></ul><h4>📚 Eğitim İçeriği</h4><p>Diyabet sizi bazen kaygılı hissettirebilir. Nefes egzersizleri, gevşeme, sevdiklerinizle paylaşmak çok faydalıdır.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Günde 5 dk derin nefes egzersizi yapın.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.apa.org/topics/stress" target="_blank">https://www.apa.org/topics/stress</a></li></ul></div><button class="accordion-btn">🤝 Modül 10: Sağlık Ekibi ile İletişim<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Ekibinizle işbirliği yapmayı öğrenin</li><li>Randevulara hazırlıklı gidin</li></ul><h4>📚 Eğitim İçeriği</h4><p>Randevuya ölçüm kayıtlarınızı ve ilaç listenizi götürün. Önceden sorularınızı yazın.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Bir sonraki kontrol için 3 soruluk liste hazırlayın.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.diabeteseducator.org" target="_blank">https://www.diabeteseducator.org</a></li></ul></div><button class="accordion-btn">📱 Modül 11: Teknoloji Kullanımı<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Sağlık teknolojilerini tanıyın</li></ul><h4>📚 Eğitim İçeriği</h4><p>Cep telefonları ve uygulamalar ölçümleri kaydetmenizi kolaylaştırır. CGM cihazları da telefonla senkronize olabilir.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Bir diyabet uygulaması indirin ve 3 gün kullanın.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.fda.gov/medical-devices/diabetes-management-devices" target="_blank">https://www.fda.gov/medical-devices/diabetes-management-devices</a></li></ul></div><button class="accordion-btn">🌱 Modül 12: Sürdürülebilirlik<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Uzun vadeli takibi öğrenin</li><li>Gerçekçi hedefler koyun</li></ul><h4>📚 Eğitim İçeriği</h4><p>Diyabet bir yolculuktur. Küçük ve gerçekçi hedefler koymak önemlidir. Aileniz ve sağlık ekibiniz size destek verir.</p><h4>📝 Ödev / Uygulama</h4><ul><li>3 aylık bir SMART hedef belirleyin (örn: 3 ayda 2 kg vermek).</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.diabetes.org/healthy-living" target="_blank">https://www.diabetes.org/healthy-living</a></li></ul></div>
-  </div>
+
+  <section class="hero" id="hero">
+    <h2>Diyabet Öz-Yönetim Eğitim Programı</h2>
+    <p>Genç yetişkinler için anlaşılır, rehber niteliğinde, hemşire liderliğinde mobil destekli eğitim modülleri</p>
+    <a href="#modules" class="cta">📚 Modüllere Başla</a>
+  </section>
+
+  <section class="container" id="modules">
+    <h2 class="sec-title">📘 Eğitim Modülleri</h2>
+<button class="accordion-btn">🩺 Modül 1: Diyabeti Anlamak<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Diyabetin tiplerini ve neden önemli olduğunu öğrenin</li><li>Komplikasyonlardan nasıl korunduğunu bilin</li></ul><h4>📚 Eğitim İçeriği</h4><p>Diyabet insülin hormonu ile ilgili bir durumdur. Tip 1 insülin yokluğu, Tip 2 insülin direnci ile ilgilidir. Kontrol edilmezse kalp, göz, böbrek ve sinirlere zarar verebilir.</p><h4>❓ Aklına Takılabilir</h4><p>❓ Soru: Şekerim neden dalgalanıyor? → Cevap: Beslenme, stres ve egzersiz şekerinizi etkiler. Önce yaşam alışkanlıklarınızı gözden geçirin, anormal durumlarda sağlık ekibine başvurun.</p><h4>📝 Ödev / Uygulama</h4><ul><li>1 hafta boyunca sabah açlık ve yemek sonrası kan şekeri ölçün.</li><li>3 faktörü yazın.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.diabetes.org/diabetes" target="_blank">https://www.diabetes.org/diabetes</a></li></ul></div><button class="accordion-btn">🍎 Modül 2: Sağlıklı Beslenme<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Tabak modelini öğrenin</li><li>Şekerli içeceklerden kaçının</li></ul><h4>📚 Eğitim İçeriği</h4><p>Sağlıklı beslenme, dengenin sağlanmasıdır. Tabağın yarısı sebze, çeyreği protein, çeyreği tam tahıl.</p><h4>❓ Aklına Takılabilir</h4><p>❓ Soru: Ara öğün şart mı? → Cevap: Şekeriniz dalgalanıyorsa uygun ara öğünler faydalıdır.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Bir öğününüzü tabak modeline göre düzenleyin.</li></ul><h4>🔗 Kaynaklar</h4><ul><li><a href="https://www.diabetes.org/nutrition" target="_blank">https://www.diabetes.org/nutrition</a></li></ul></div>
+  </section>
+
+  <section class="container" id="progress">
+    <h2 class="sec-title">📈 Katılımcı İlerlemesi</h2>
+    <p>Her modülün altındaki kutucuğu işaretleyin. İlerlemeniz otomatik hesaplanır.</p>
+    <div class="progress-container"><div class="progress-bar" id="progress-bar">0%</div></div>
+    <div id="progress-list"></div>
+  </section>
+
+  <footer id="contact">
+    <h2>📩 İletişim</h2>
+    <p>Bu yolculukta yalnız değilsiniz. Sorularınız için benimle iletişime geçebilirsiniz.</p>
+    <p><strong>Recep TURAN</strong><br>📞 05312244721<br>📧 recepturan72@hotmail.com</p>
+    <form>
+      <input type="text" placeholder="Adınız" required>
+      <input type="email" placeholder="E-posta" required>
+      <textarea placeholder="Mesajınız" rows="4" required></textarea>
+      <button type="submit">Gönder</button>
+    </form>
+    <p>&copy; 2025 Diyabet Yolculuğum – Eğitim Programı</p>
+  </footer>
+
   <script>
-  const btns = document.querySelectorAll('.accordion-btn');
-  const panels = document.querySelectorAll('.panel');
+  const btns=document.querySelectorAll('.accordion-btn');
+  const panels=document.querySelectorAll('.panel');
   btns.forEach((btn,i)=>{
     btn.addEventListener('click',()=>{
-      const p = panels[i];
-      const open = p.classList.contains('open');
-      panels.forEach(pp=>{pp.style.maxHeight=null; pp.classList.remove('open');});
-      document.querySelectorAll('.accordion-icon')[i].textContent = '+';
-      if(!open){
-        p.classList.add('open');
-        p.style.maxHeight = p.scrollHeight + 20 + 'px';
-        btn.querySelector('.accordion-icon').textContent = '–';
-      }
+      const p=panels[i];const open=p.classList.contains('open');
+      panels.forEach(pp=>{pp.style.maxHeight=null;pp.classList.remove('open');});
+      document.querySelectorAll('.accordion-icon')[i].textContent='+';
+      if(!open){p.classList.add('open');p.style.maxHeight=p.scrollHeight+'px';btn.querySelector('.accordion-icon').textContent='–';}
     });
   });
+
+  // ilerleme hesaplama
+  const progressList=document.getElementById('progress-list');
+  panels.forEach((p,i)=>{
+    let cb=document.createElement('input');cb.type='checkbox';
+    cb.id='mod'+i;cb.addEventListener('change',updateProgress);
+    let label=document.createElement('label');label.textContent=' '+btns[i].textContent;label.htmlFor=cb.id;
+    progressList.appendChild(cb);progressList.appendChild(label);progressList.appendChild(document.createElement('br'));
+  });
+  function updateProgress(){
+    let total=panels.length;let done=0;
+    document.querySelectorAll('#progress-list input').forEach(cb=>{if(cb.checked)done++;});
+    let percent=Math.round(done/total*100);
+    const bar=document.getElementById('progress-bar');
+    bar.style.width=percent+'%';bar.textContent=percent+'%';
+  }
   </script>
+
 </body>
 </html>
