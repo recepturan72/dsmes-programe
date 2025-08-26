@@ -1,115 +1,45 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diyabet Yolculuğum - Eğitim Programı</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#f9fafb; color:#111827;}
-    header { background:#4f46e5; color:#fff; position:fixed; top:0; width:100%; z-index:1000;
-      display:flex; justify-content:space-between; align-items:center; padding:15px 30px; }
-    header h1 { margin:0; font-size:20px; }
-    nav a { color:#fff; margin:0 10px; text-decoration:none; font-weight:bold; }
-    nav a:hover { text-decoration:underline; }
-    .hero { padding:120px 20px 60px; text-align:center; background:linear-gradient(135deg,#667eea,#764ba2); color:#fff; }
-    .hero h2 { font-size:32px; margin-bottom:10px; }
-    .hero p { font-size:18px; max-width:700px; margin:0 auto 20px; }
-    .cta { background:#10b981; color:#fff; padding:12px 22px; text-decoration:none; border-radius:6px; font-weight:bold; }
-    .cta:hover { background:#059669; }
-    .container { max-width:960px; margin:30px auto; padding:20px; }
-    h2.sec-title { text-align:center; margin:40px 0 20px; color:#111827; }
-    .accordion-btn { width:100%; background:#4338ca; color:#fff; padding:15px;
-      border:none; border-radius:8px; text-align:left; font-size:18px; margin:6px 0;
-      cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
-    .accordion-btn:hover { background:#3730a3; }
-    .accordion-icon { font-weight:bold; margin-left:12px; }
-    .panel { max-height:0; overflow:hidden; background:#fff; border-radius:0 0 8px 8px; margin-bottom:12px;
-      padding:0 18px; transition:max-height 0.3s ease, padding 0.2s ease; }
-    .panel.open { padding:16px 18px 18px; }
-    .panel h4 { margin:12px 0 6px; color:#4338ca; }
-    .panel ul { margin:0 0 10px 22px; }
-    .panel li { margin-bottom:6px; }
-    .progress-container{background:#e5e7eb;border-radius:8px;overflow:hidden;margin:20px 0;}
-    .progress-bar{height:20px;background:#10b981;width:0%;text-align:center;color:#fff;font-size:12px;transition:width 0.3s ease;}
-    footer { background:#1f2937; color:#fff; text-align:center; padding:30px 20px; margin-top:40px; }
-    form{max-width:400px;margin:0 auto;text-align:left;}
-    form input,form textarea{width:100%;padding:8px;margin-bottom:12px;border:1px solid #ccc;border-radius:6px;}
-    form button{background:#4f46e5;color:#fff;padding:10px 16px;border:none;border-radius:6px;cursor:pointer;}
-    form button:hover{background:#4338ca;}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Diyabet Yolculuğum</h1>
-    <nav>
-      <a href="#hero">Ana Sayfa</a>
-      <a href="#modules">Modüller</a>
-      <a href="odevler.html">Ödevler</a>
-      <a href="nurse_panel.html">Hemşire Paneli</a>
-      <a href="raporlar.html">Raporlar</a>
-      <a href="#progress">İlerlemen</a>
-      <a href="#contact">İletişim</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="hero">
-    <h2>Diyabet Öz-Yönetim Eğitim Programı</h2>
-    <p>Genç yetişkinler için anlaşılır, rehber niteliğinde, hemşire liderliğinde mobil destekli eğitim modülleri</p>
-    <a href="#modules" class="cta">📚 Modüllere Başla</a>
-  </section>
-
-  <section class="container" id="modules">
-    <h2 class="sec-title">📘 Eğitim Modülleri</h2>
-<button class="accordion-btn">🩺 Modül 1: Diyabeti Anlamak<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">🍎 Modül 2: Sağlıklı Beslenme<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">📊 Modül 3: Glisemik İndeks<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">🏃 Modül 4: Fiziksel Aktivite<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">💊 Modül 5: İlaç Kullanımı<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">🧪 Modül 6: Kan Şekeri Takibi<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">🧯 Modül 7: Şeker Düşmesi/Yükselmesi<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">🛡 Modül 8: Riskleri Azaltmak<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">🧠 Modül 9: Psikososyal Destek<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">🤝 Modül 10: Sağlık Ekibiyle İletişim<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">📱 Modül 11: Teknoloji Kullanımı<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div><button class="accordion-btn">🌱 Modül 12: Sürdürülebilirlik<span class="accordion-icon">+</span></button>\n<div class="panel"><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Detaylı hedef 1</li><li>Detaylı hedef 2</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hasta merkezli, anlaşılır dilde detaylı içerik.</p><h4>❓ Aklına Takılabilir</h4><p>Soru ve cevaplar yön gösterici biçimde.</p><h4>📝 Ödev / Uygulama</h4><ul><li>Uygulama görevi 1</li><li>Uygulama görevi 2</li></ul><h4>💡 Yol Haritası</h4><p>Adım adım ne yapmalı detaylı rehberlik.</p><h4>🔗 Kaynaklar</h4><ul><li><a href="#" target="_blank">ADA 2024</a></li></ul></div>
-  </section>
-
-  <section class="container" id="progress">
-    <h2 class="sec-title">📈 Katılımcı İlerlemesi</h2>
-    <p>Her modülün altındaki kutucuğu işaretleyin. İlerlemeniz otomatik hesaplanır.</p>
-    <div class="progress-container"><div class="progress-bar" id="progress-bar">0%</div></div>
-    <div id="progress-list"></div>
-  </section>
-
-  <footer id="contact">
-    <h2>📩 İletişim</h2>
-    <p>Bu yolculukta yalnız değilsiniz. Sorularınız için benimle iletişime geçebilirsiniz.</p>
-    <p><strong>Recep TURAN</strong><br>📞 05312244721<br>📧 recepturan72@hotmail.com</p>
-    <form>
-      <input type="text" placeholder="Adınız" required>
-      <input type="email" placeholder="E-posta" required>
-      <textarea placeholder="Mesajınız" rows="4" required></textarea>
-      <button type="submit">Gönder</button>
-    </form>
-    <p>&copy; 2025 Diyabet Yolculuğum – Eğitim Programı</p>
-  </footer>
-
-  <script>
-  const btns=document.querySelectorAll('.accordion-btn');
-  const panels=document.querySelectorAll('.panel');
-  btns.forEach((btn,i)=>{
-    btn.addEventListener('click',()=>{
-      const p=panels[i];const open=p.classList.contains('open');
-      panels.forEach(pp=>{pp.style.maxHeight=null;pp.classList.remove('open');});
-      if(!open){p.classList.add('open');p.style.maxHeight=p.scrollHeight+'px';}
-    });
-  });
-
-  // ilerleme hesaplama
-  const progressList=document.getElementById('progress-list');
-  panels.forEach((p,i)=>{
-    let cb=document.createElement('input');cb.type='checkbox';
-    cb.id='mod'+i;cb.addEventListener('change',updateProgress);
-    let label=document.createElement('label');label.textContent=' '+btns[i].textContent;label.htmlFor=cb.id;
-    progressList.appendChild(cb);progressList.appendChild(label);progressList.appendChild(document.createElement('br'));
-  });
-  function updateProgress(){
-    let total=panels.length;let done=0;
-    document.querySelectorAll('#progress-list input').forEach(cb=>{if(cb.checked)done++;});
-    let percent=Math.round(done/total*100);
-    const bar=document.getElementById('progress-bar');
-    bar.style.width=percent+'%';bar.textContent=percent+'%';
-  }
-  </script>
-
-</body>
-</html>
+<!DOCTYPE html><html lang='tr'><head><meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Diyabet Yolculuğum - Eğitim Programı</title>
+<style>
+body{font-family:Arial;margin:0;background:#f9fafb;color:#111827;}
+header{background:#4f46e5;color:#fff;position:fixed;top:0;width:100%;z-index:1000;
+display:flex;justify-content:space-between;align-items:center;padding:15px 30px;}
+header h1{margin:0;font-size:20px;} nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:bold;}
+nav a:hover{text-decoration:underline;} .hero{padding:120px 20px 60px;text-align:center;
+background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;} .hero h2{font-size:32px;margin-bottom:10px;}
+.hero p{font-size:18px;max-width:700px;margin:0 auto 20px;} .cta{background:#10b981;color:#fff;padding:12px 22px;
+text-decoration:none;border-radius:6px;font-weight:bold;} .cta:hover{background:#059669;}
+.container{max-width:960px;margin:30px auto;padding:20px;} h2.sec-title{text-align:center;margin:40px 0 20px;}
+.accordion-btn{width:100%;background:#4338ca;color:#fff;padding:15px;border:none;border-radius:8px;text-align:left;
+font-size:18px;margin:6px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.accordion-icon{font-weight:bold;margin-left:12px;} .panel{max-height:0;overflow:hidden;background:#fff;border-radius:0 0 8px 8px;
+margin-bottom:12px;padding:0 18px;transition:max-height 0.3s ease,padding 0.2s ease;} .panel.open{padding:16px 18px 18px;}
+.panel h4{margin:12px 0 6px;color:#4338ca;} .panel ul{margin:0 0 10px 22px;} .panel li{margin-bottom:6px;}
+.progress-container{background:#e5e7eb;border-radius:8px;overflow:hidden;margin:20px 0;}
+.progress-bar{height:20px;background:#10b981;width:0%;text-align:center;color:#fff;font-size:12px;transition:width 0.3s ease;}
+footer{background:#1f2937;color:#fff;text-align:center;padding:30px 20px;margin-top:40px;}
+form{max-width:400px;margin:0 auto;text-align:left;} form input,form textarea{width:100%;padding:8px;margin-bottom:12px;border:1px solid #ccc;border-radius:6px;}
+form button{background:#4f46e5;color:#fff;padding:10px 16px;border:none;border-radius:6px;cursor:pointer;} form button:hover{background:#4338ca;}
+</style></head><body>
+<header><h1>Diyabet Yolculuğum</h1>
+<nav><a href='#hero'>Ana Sayfa</a><a href='#modules'>Modüller</a><a href='odevler.html'>Ödevler</a><a href='nurse_panel.html'>Hemşire Paneli</a><a href='raporlar.html'>Raporlar</a><a href='#progress'>İlerlemen</a><a href='#contact'>İletişim</a></nav></header>
+<section class='hero' id='hero'><h2>Diyabet Öz-Yönetim Eğitim Programı</h2><p>Hasta dostu, literatür destekli 12 eğitim modülü</p>
+<a href='#modules' class='cta'>📚 Modüllere Başla</a></section>
+<section class='container' id='modules'><h2 class='sec-title'>📘 Eğitim Modülleri</h2>
+<button class='accordion-btn'>🩺 Modül 1: Diyabeti Anlamak<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Diyabetin temellerini öğrenmek</li><li>Neden kontrol önemli olduğunu anlamak</li></ul><h4>📚 Eğitim İçeriği</h4><p>Diyabet, kandaki şekerin yüksek seyretmesiyle karakterize bir durumdur. Tip 1’de insülin hiç üretilmez, Tip 2’de ise insülin etkili kullanılmaz. Yüksek şeker zamanla kalp, göz, böbrek, sinirlere zarar verebilir.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Kan şekerim neden dalgalanıyor?</strong>: Beslenme, hareket, stres, uyku ve ilaçlar etkiler.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>1 hafta açlık/tokluk şekerinizi ölçün ve kaydedin.</li></ul><h4>💡 Yol Haritası</h4><p>Hedef dışı değerler ısrarla devam ederse sağlık ekibine başvurun.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.diabetes.org/diabetes' target='_blank'>https://www.diabetes.org/diabetes</a></li></ul></div><button class='accordion-btn'>🍎 Modül 2: Sağlıklı Beslenme<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Sağlıklı tabak modelini öğrenmek</li><li>Porsiyon ölçülerini bilmek</li></ul><h4>📚 Eğitim İçeriği</h4><p>Beslenme yasaklardan ibaret değil, denge kurmaktır. Tabağın yarısı sebze, çeyreği protein, çeyreği tam tahıl olmalı.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Ara öğün gerekli mi?</strong>: Kan şekeri dalgalanıyorsa evet, küçük meyve veya yoğurt faydalı olabilir.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>Bir öğününüzü tabak modeline göre düzenleyin.</li></ul><h4>💡 Yol Haritası</h4><p>Tokluk şekerinizi ölçün, yüksekse bir sonraki gün porsiyon küçültün.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.diabetes.org/nutrition' target='_blank'>https://www.diabetes.org/nutrition</a></li></ul></div><button class='accordion-btn'>📊 Modül 3: Glisemik İndeks<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Glisemik indeksin ne olduğunu bilmek</li></ul><h4>📚 Eğitim İçeriği</h4><p>Yiyeceklerin kan şekerine etkisinin hızına glisemik indeks denir. Beyaz ekmek hızlı, mercimek yavaş yükseltir.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Yalnız düşük GI mı yemeliyim?</strong>: Hayır, denge önemlidir. Lif/proteinle birlikte olursa yüksek GI da tolere edilebilir.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>Bir öğünde beyaz ekmeği tam buğday ekmek ile değiştirin.</li></ul><h4>💡 Yol Haritası</h4><p>Uzun vadede düşük-orta GI besinler tercih edin.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://glycemicindex.com' target='_blank'>https://glycemicindex.com</a></li></ul></div><button class='accordion-btn'>🏃 Modül 4: Fiziksel Aktivite<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Egzersizin faydasını öğrenmek</li></ul><h4>📚 Eğitim İçeriği</h4><p>Günlük 30 dk yürüyüş kan şekerini dengeler. Egzersizden önce şekerinizi ölçün (100–250 mg/dl güvenli aralıktır).</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Ayak problemimde?</strong>: Uygun ayakkabı giyin, yara varsa doktora danışın.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>3 gün art arda 30 dk yürüyün.</li></ul><h4>💡 Yol Haritası</h4><p>Nefes darlığı veya göğüs ağrısında egzersizi kesin, hekime başvurun.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.who.int/news-room/fact-sheets/detail/physical-activity' target='_blank'>https://www.who.int/news-room/fact-sheets/detail/physical-activity</a></li></ul></div><button class='accordion-btn'>💊 Modül 5: İlaç Kullanımı<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>İlaçların nasıl çalıştığını bilmek</li></ul><h4>📚 Eğitim İçeriği</h4><p>Metformin karaciğerin fazla şeker üretmesini engeller. İnsülin doğrudan kan şekerini düşürür.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>İlacımı unuttum ne yapmalıyım?</strong>: Çok zaman geçmediyse alın, düşünecek kadar vakit geçtiyse atlayın, çift doz almayın.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>İlaçlarınızı listeleyin (isim, doz, saat).</li></ul><h4>💡 Yol Haritası</h4><p>Yan etki varsa ilacı bırakmadan önce sağlık ekibinize danışın.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.diabetes.org/diabetes/medication' target='_blank'>https://www.diabetes.org/diabetes/medication</a></li></ul></div><button class='accordion-btn'>🧪 Modül 6: Kan Şekeri Takibi<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Hedef değerleri bilmek</li></ul><h4>📚 Eğitim İçeriği</h4><p>Açlık 80–130 mg/dl, yemek sonrası 180’den düşük olmalıdır.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Günde kaç defa ölçüm yapmalıyım?</strong>: Genellikle 1–4 defa, tedavinize göre değişir.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>Bir hafta boyunca sabah açlık ve yemek sonrası ölçüm yapıp kaydedin.</li></ul><h4>💡 Yol Haritası</h4><p>Değerler sürekli yüksekse doktorunuza başvurun.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://professional.diabetes.org/diapro/glucose-monitoring' target='_blank'>https://professional.diabetes.org/diapro/glucose-monitoring</a></li></ul></div><button class='accordion-btn'>🧯 Modül 7: Şeker Düşmesi ve Yükselmesi<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Hipoglisemiyi tanımak</li><li>Hiperglisemiyi tanımak</li></ul><h4>📚 Eğitim İçeriği</h4><p>Hipoglisemi (<70): titreme, terleme. Hiperglisemi (>180): çok susama, çok idrara çıkma. Tedaviler farklıdır.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Gece hipoglisemi olursa?</strong>: Yanınızda glukoz tableti veya meyve suyu bulundurun.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>Bir hipoglisemi anınızı kaydedin, nedenlerini yazın.</li></ul><h4>💡 Yol Haritası</h4><p>>300 mg/dl ise veya keton belirtisi varsa acil sağlık başvurusu yapın.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.diabetes.org/diabetes/hypoglycemia' target='_blank'>https://www.diabetes.org/diabetes/hypoglycemia</a></li></ul></div><button class='accordion-btn'>🛡 Modül 8: Riskleri Azaltmak<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Komplikasyonlardan korunmayı öğrenmek</li></ul><h4>📚 Eğitim İçeriği</h4><p>Göz, böbrek, kalp ve ayak sağlığı için düzenli kontroller çok önemlidir.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Her gün ayak bakımı gerekli mi?</strong>: Evet. Küçük bir yara bile büyüyebilir.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>Bugün ayaklarınızı inceleyin ve kayıt alın.</li></ul><h4>💡 Yol Haritası</h4><p>Sigara bırakın, tansiyon ve kolesterol takibinizi sürdürün.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.cdc.gov/diabetes/basics/risk-factors.html' target='_blank'>https://www.cdc.gov/diabetes/basics/risk-factors.html</a></li></ul></div><button class='accordion-btn'>🧠 Modül 9: Psikososyal Destek<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Diyabetin ruhsal etkisini anlamak</li></ul><h4>📚 Eğitim İçeriği</h4><p>Sürekli dikkat gerektirmesi moralinizi bozabilir, kaygı artırabilir.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Moralim bozulursa?</strong>: Yakınlarınızla paylaşın ve gerekiyorsa psikolojik destek alın.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>Günde 5 dk nefes egzersizi yapın.</li></ul><h4>💡 Yol Haritası</h4><p>Yalnız olmadığınızı bilin. Destek almak bir güç göstergesidir.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.apa.org/topics/stress' target='_blank'>https://www.apa.org/topics/stress</a></li></ul></div><button class='accordion-btn'>🤝 Modül 10: Sağlık Ekibiyle İletişim<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Doktor ve hemşireyle iletişim kurmayı öğrenmek</li></ul><h4>📚 Eğitim İçeriği</h4><p>Sorularınızı not alarak randevuya gidin. Açık iletişim tedavinizi kolaylaştırır.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Küçük sorularımı sorabilir miyim?</strong>: Evet, her şey önemli olabilir.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>Bir sonraki vizit için 3 soruluk liste hazırlayın.</li></ul><h4>💡 Yol Haritası</h4><p>Her randevuda ölçümlerinizi ve sorularınızı paylaşın.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.diabeteseducator.org' target='_blank'>https://www.diabeteseducator.org</a></li></ul></div><button class='accordion-btn'>📱 Modül 11: Teknoloji Kullanımı<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Sağlık teknolojilerini tanımak</li></ul><h4>📚 Eğitim İçeriği</h4><p>Telefon uygulamaları ve glukoz sensörleri izlemenizi kolaylaştırır.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Hangi uygulama doğru?</strong>: Güvenilir ve bilinen uygulamaları kullanın.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>Bir diyabet uygulaması indirin ve deneyin.</li></ul><h4>💡 Yol Haritası</h4><p>Teknoloji destek sağlar ama doktorun yerine geçmez.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.fda.gov/medical-devices/diabetes-management-devices' target='_blank'>https://www.fda.gov/medical-devices/diabetes-management-devices</a></li></ul></div><button class='accordion-btn'>🌱 Modül 12: Sürdürülebilirlik<span class='accordion-icon'>+</span></button><div class='panel'><h4>🎯 Öğrenme Hedefleri</h4><ul><li>Uzun vadeli alışkanlıkları sürdürmek</li></ul><h4>📚 Eğitim İçeriği</h4><p>Diyabet bir maraton gibidir. Küçük, uygulanabilir hedeflerle ilerlemek önemlidir.</p><h4>❓ Aklına Takılabilir</h4><ul><li><strong>Zamanla sıkılırsam?</strong>: Küçük hedefler koyun, gerekirse destek alın.</li></ul><h4>📝 Ödev / Uygulama</h4><ul><li>Önümüzdeki 3 ay için 1 SMART hedef yazın.</li></ul><h4>💡 Yol Haritası</h4><p>Beslenme, egzersiz, uyku dengesini uzun vadede sürdürün.</p><h4>🔗 Kaynaklar</h4><ul><li><a href='https://www.diabetes.org/healthy-living' target='_blank'>https://www.diabetes.org/healthy-living</a></li></ul></div></section>
+<section class='container' id='progress'><h2 class='sec-title'>📈 Katılımcı İlerlemesi</h2>
+<div class='progress-container'><div class='progress-bar' id='progress-bar'>0%</div></div><div id='progress-list'></div></section>
+<footer id='contact'><h2>📩 İletişim</h2><p>Sorularınız için benimle iletişime geçebilirsiniz.</p>
+<p><strong>Recep TURAN</strong><br>📞 05312244721<br>📧 recepturan72@hotmail.com</p>
+<form><input type='text' placeholder='Adınız' required><input type='email' placeholder='E-posta' required>
+<textarea placeholder='Mesajınız' rows='4' required></textarea><button type='submit'>Gönder</button></form>
+<p>&copy; 2025 Diyabet Yolculuğum – Eğitim Programı</p></footer>
+<script>
+const btns=document.querySelectorAll('.accordion-btn');const panels=document.querySelectorAll('.panel');
+btns.forEach((btn,i)=>{btn.addEventListener('click',()=>{const p=panels[i];const open=p.classList.contains('open');
+panels.forEach(pp=>{pp.style.maxHeight=null;pp.classList.remove('open');});
+if(!open){p.classList.add('open');p.style.maxHeight=p.scrollHeight+'px';}});});
+const progressList=document.getElementById('progress-list');panels.forEach((p,i)=>{let cb=document.createElement('input');cb.type='checkbox';cb.id='mod'+i;cb.addEventListener('change',updateProgress);let label=document.createElement('label');label.textContent=' '+btns[i].textContent;label.htmlFor=cb.id;progressList.appendChild(cb);progressList.appendChild(label);progressList.appendChild(document.createElement('br'));});
+function updateProgress(){let total=panels.length;let done=0;document.querySelectorAll('#progress-list input').forEach(cb=>{if(cb.checked)done++;});let percent=Math.round(done/total*100);const bar=document.getElementById('progress-bar');bar.style.width=percent+'%';bar.textContent=percent+'%';}
+</script></body></html>
