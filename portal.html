@@ -5,7 +5,6 @@
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>Diyabet Portal</title>
-  <!-- Firebase compat versiyonları -->
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
@@ -36,7 +35,6 @@
       <button onclick="showTab('dds')">📑 DDS</button>
     </nav>
 
-    <!-- Kan şekeri sekmesi -->
     <div id="seker" class="tab">
       <h3>📊 Kan Şekeri Takibi</h3>
       <input type="number" id="glucose" placeholder="Kan Şekeri (mg/dl)"><br>
@@ -46,45 +44,34 @@
       <div id="sekerList"></div>
     </div>
 
-    <!-- Tanıtıcı bilgi sekmesi -->
     <div id="tanitici" class="tab">
       <h3>📑 Tanıtıcı Bilgi Formu</h3>
       <form id="taniticiForm">
-        <label>Cinsiyet: 
-          <select name="cinsiyet"><option>Kadın</option><option>Erkek</option></select>
-        </label><br>
+        <label>Cinsiyet: <select name="cinsiyet"><option>Kadın</option><option>Erkek</option></select></label><br>
         <label>Yaş: <input type="number" name="yas"></label><br>
-        <label>Eğitim: 
-          <select name="egitim">
-            <option>İlköğretim</option><option>Lise</option><option>Üniversite</option><option>Lisansüstü</option>
-          </select>
-        </label><br>
+        <label>Eğitim: <select name="egitim"><option>İlköğretim</option><option>Lise</option><option>Üniversite</option><option>Lisansüstü</option></select></label><br>
         <label>Meslek: <input type="text" name="meslek"></label><br>
         <label>Medeni Durum: <select name="medeni"><option>Bekar</option><option>Evli</option></select></label><br>
         <label>Diyabet Tanı Yılı: <input type="number" name="taniYili"></label><br>
-        <label>Tedavi Türü: 
-          <select name="tedavi"><option>OAD</option><option>İnsülin</option><option>OAD+İnsülin</option></select>
-        </label><br>
+        <label>Tedavi Türü: <select name="tedavi"><option>OAD</option><option>İnsülin</option><option>OAD+İnsülin</option></select></label><br>
         <label>Ek Hastalıklar: <input type="text" name="ekHastaliklar"></label><br>
         <button type="button" onclick="kaydetForm('Tanıtıcı')">Kaydet</button>
       </form>
       <div id="taniticiList"></div>
     </div>
 
-    <!-- DÖYS sekmesi -->
     <div id="doys" class="tab">
-      <h3>📑 Diyabet Öz Yönetim Skalası (DÖYS) - 16 Madde</h3>
+      <h3>📑 DÖYS – 16 Madde</h3>
       <form id="doysForm">
-        <!-- 16 madde -->
+        <!-- 16 madde 0–3 likert -->
         <p>1- DÖYS soru 1: <select name='q1'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>2- DÖYS soru 2: <select name='q2'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>3- DÖYS soru 3: <select name='q3'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>4- DÖYS soru 4: <select name='q4'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>5- DÖYS soru 5: <select name='q5'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>6- DÖYS soru 6: <select name='q6'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>7- DÖYS soru 7: <select name='q7'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>8- DÖYS soru 8: <select name='q8'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>9- DÖYS soru 9: <select name='q9'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>10- DÖYS soru 10: <select name='q10'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>11- DÖYS soru 11: <select name='q11'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>12- DÖYS soru 12: <select name='q12'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>13- DÖYS soru 13: <select name='q13'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>14- DÖYS soru 14: <select name='q14'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>15- DÖYS soru 15: <select name='q15'><option>3</option><option>2</option><option>1</option><option>0</option></select></p><p>16- DÖYS soru 16: <select name='q16'><option>3</option><option>2</option><option>1</option><option>0</option></select></p>
         <button type="button" onclick="kaydetForm('DÖYS')">Kaydet</button>
       </form>
       <div id="doysList"></div>
     </div>
 
-    <!-- DDS sekmesi -->
     <div id="dds" class="tab">
-      <h3>📑 Diyabet Distres Ölçeği (DDS) - 8 Madde</h3>
+      <h3>📑 DDS – 8 Madde</h3>
       <form id="ddsForm">
         <p>1- DDS soru 1: <select name='q1'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></p><p>2- DDS soru 2: <select name='q2'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></p><p>3- DDS soru 3: <select name='q3'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></p><p>4- DDS soru 4: <select name='q4'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></p><p>5- DDS soru 5: <select name='q5'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></p><p>6- DDS soru 6: <select name='q6'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></p><p>7- DDS soru 7: <select name='q7'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></p><p>8- DDS soru 8: <select name='q8'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></p>
         <button type="button" onclick="kaydetForm('DDS')">Kaydet</button>
@@ -116,12 +103,10 @@
       auth.signInWithEmailAndPassword(
         document.getElementById('email').value,
         document.getElementById('password').value
-      )
-      .then(()=>{
+      ).then(()=>{
         document.getElementById('loginDiv').style.display='none';
         document.getElementById('portal').style.display='block';
-      })
-      .catch(e=>alert(e.message));
+      }).catch(e=>alert(e.message));
     }
     function cikisYap(){auth.signOut();location.reload();}
 
@@ -131,35 +116,33 @@
     }
 
     function kaydetSeker(){
-      const user = auth.currentUser;
-      db.collection("records").add({
+      const user = auth.currentUser; if(!user){alert('Giriş yapın');return}
+      db.collection('records').add({
         uid:user.uid,
         glucose:document.getElementById('glucose').value,
         note:document.getElementById('note').value,
         createdAt:new Date()
-      }).then(()=>{listeleSeker();});
+      }).then(listeleSeker);
     }
     function listeleSeker(){
-      const user = auth.currentUser;
-      db.collection("records").where("uid","==",user.uid).get().then(snap=>{
-        let out=""; snap.forEach(doc=>{let d=doc.data(); out+=`<div class='record'>${d.glucose} mg/dl (${d.note})</div>`;});
+      const user = auth.currentUser; if(!user) return;
+      db.collection('records').where('uid','==',user.uid).get().then(snap=>{
+        let out=''; snap.forEach(doc=>{const d=doc.data(); out+=`<div class='record'>${d.glucose} mg/dl (${d.note||''})</div>`});
         document.getElementById('sekerList').innerHTML=out;
       });
     }
 
     function kaydetForm(scale){
-      const user = auth.currentUser;
-      const form=document.getElementById(scale=="Tanıtıcı"?"taniticiForm":(scale=="DÖYS"?"doysForm":"ddsForm"));
-      const data={};[...form.elements].forEach(el=>{if(el.name)data[el.name]=el.value;});
-      db.collection("forms").add({
-        uid:user.uid, scale:scale, answers:data, createdAt:new Date()
-      }).then(()=>{listeleForm(scale);});
+      const user = auth.currentUser; if(!user){alert('Giriş yapın');return}
+      const form=document.getElementById(scale==="Tanıtıcı"?"taniticiForm":(scale==="DÖYS"?"doysForm":"ddsForm"));
+      const data={};[...form.elements].forEach(el=>{if(el.name) data[el.name]=el.value;});
+      db.collection('forms').add({ uid:user.uid, scale, answers:data, createdAt:new Date() })
+        .then(()=>{listeleForm(scale);});
     }
-
     function listeleForm(scale){
-      const user = auth.currentUser;
-      db.collection("forms").where("uid","==",user.uid).where("scale","==",scale).get().then(snap=>{
-        let out=""; snap.forEach(doc=>{let d=doc.data(); out+=`<div class='entry'>${JSON.stringify(d.answers)}</div>`;});
+      const user = auth.currentUser; if(!user) return;
+      db.collection('forms').where('uid','==',user.uid).where('scale','==',scale).get().then(snap=>{
+        let out=''; snap.forEach(doc=>{const d=doc.data(); out+=`<div class='entry'>${JSON.stringify(d.answers)}</div>`});
         document.getElementById(scale.toLowerCase()+"List").innerHTML=out;
       });
     }
