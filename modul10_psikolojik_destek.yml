@@ -1,0 +1,1 @@
+version: '3.1'\nresponses:\n  utter_intro:\n  - text: 'Psikolojik destek senin için önemli.'
